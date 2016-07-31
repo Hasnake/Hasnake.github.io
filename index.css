@@ -5,13 +5,14 @@ there are definitely some properties you should add!*/
     html {
       height: 50%;
       padding: 10px;
-      border: 4px solid #000000;
+
       }
     body
     {
        width: 800px;
        height: 100%;
        padding:20px;
+       border: 4px solid #000000;
   animation: pulse 10s infinite;
 }
 
