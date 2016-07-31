@@ -10,6 +10,7 @@ there are definitely some properties you should add!*/
     {
        width: 800px;
        height: 100%;
+       border-radius: 30px;
   animation: pulse 10s infinite;
 }
 
