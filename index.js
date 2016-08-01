@@ -2,7 +2,11 @@
 <html>
 <body>
 <script>
-document.getElementById("h2").innerHTML = BahireHasab;
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
 </script>
 
 </body>
