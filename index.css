@@ -15,10 +15,10 @@
 
 @keyframes pulse {
   0% {
-    background-color: #000000;
+    background-color: white;
   }
   100% {
-    background-color: #000000;
+    background-color: white;
   }
 }
 
