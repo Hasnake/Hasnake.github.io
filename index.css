@@ -15,10 +15,10 @@
 
 @keyframes pulse {
   0% {
-    background-color: #00BB00;
+    background-color: #00aabb;
   }
   100% {
-    background-color: 00DD00;
+    background-color: 00abcd;
   }
 }
 
@@ -70,7 +70,7 @@
         vertical-align: middle;
     }
     a {
-        color:#00BBFF;
+        color:black;
     }
     section {
         width: 73%;
@@ -89,7 +89,7 @@
     }
     footer {
         width: 790px;
-        background-color:yellow;
+        background-color:white;
         color:purple;
         clear: both;
         display: block;
