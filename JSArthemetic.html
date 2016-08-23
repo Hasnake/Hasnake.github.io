@@ -3,17 +3,6 @@
 <head>
   <link rel="stylesheet" href="index.css" type="text/css">
   <link rel="icon" type="image/jpg" href="icon.JPG">
-
-
-<p id="demo"></p>
-
-<script>
-
-var x = 10;
-x += 5;
-document.getElementById("demo").innerHTML = x;
-</script>
-
 </head>
 
 <body>
@@ -21,28 +10,26 @@ document.getElementById("demo").innerHTML = x;
 <h1>JavaScript Arthematic</h1>
 <h2>JS +=</h2>
 <p>
-  one form of output using HTML element is :document.getElementById("demo").innerHTML=value;
+  //var x = 10;<br>
+  document.write(x += 5);<br>
+  Adding X +5 where X is assigned to 10 (X=10).<br>
 </p>
-<ol>
-  <li>Writing into an alert box, using <strong>window.alert().</strong></li>
-  Adding two numbers let's say 5 and 6,the sum will be displayed in the form of alert.
- <li>Writing into the HTML output using <strong>document.write().</strong></li>
- <p>
-   Adding two numbers let's say 9 and 11,the sum will be displayed in the document.
- </p>
- <script>
-   document.write(9 + 11);
- </script>
- <li>Writing into an HTML element, using <strong>innerHTML.</strong></li>
- <p id="member">Developer.</p>
- <button type="button" onclick="myFunction()">who is responsible</button>
- <li>Writing into the browser console, using <strong>console.log().</strong></li>
- <script>
-   console.log(9 + 11);
- </script>
-</ol>
-
-
+<p id="demo"></p>
+<script>
+var x = 10;
+ document.write(x += 5);
+</script>
+<h2>JS -=</h2>
+<p>
+  //var x = 10;<br>
+  document.write(x -= 5);<br>
+  Subtracting X-5 where X is assigned to 10 (X=10).
+</p>
+<p id="demo"></p>
+<script>
+var x = 10;
+document.write(x-=5);
+</script>
 
 </body>
 </html>
