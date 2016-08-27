@@ -21,11 +21,35 @@
 <li>Process is used to help eliminate redundant data</li>
 <li>Five normalization forms (NFs) </li>
 <ol>
-<li>1NF: Eliminate Repeating Groups</li>
-<li>2NF: Eliminate Redundant Data</li>
-<li>3NF: Eliminate Columns Not Dependent on Key</li>
-<li>4NF: Isolate Independent Multiple Relationships</li>
-<li>5NF: Isolate Semantically Related Multiple Relationships</li>
+<li><strong>1NF: Eliminate Repeating <u><em>GROUPS</em></u></strong></li>
+                 <ul>
+  <li>Eliminate repeating groups in individual tables</li>
+  <li>Create separate table for each set of related data</li>
+  <li>Identify each set of related data with primary key</li>
+  <li>Do not use multiple fields in a single table to store similar data</li>
+              </ul>
+<li><strong>2NF: Eliminate Redundant <u><em>DATA</em></u></strong></li>
+                        <ul>
+<li>ensures each attribute describes the entity</li>
+<li>Create separate tables for sets of values that 	apply to multiple records</li>
+<li>Relate these tables with a foreign key</li>
+<li>Records should not depend on anything other than a tables primary key, including a compound key if necessary.</li>
+                        </ul>
+<li><strong>3NF: Eliminate <u><em>COLUMNS</em></u> Not Dependent on Key</strong></li>
+                <ul>
+<li>checks for transitive dependencies.</li>
+<li>Eliminate fields that do not depend on the key</li>
+<li>Values that are not part of the records key do not belong in the table</li>
+<li>In general if the contents of a group of fields apply to more than a single record, put those fields in a separate table</li>
+             </ul>
+<li><strong>4NF: Isolate Independent Multiple Relationships</strong></li>
+                <ul>
+  <li>The fourth normal form is also called the Boyce Codd Normal Form (BCNF)</li>
+                </ul>
+<li><strong>5NF: Isolate Semantically Related Multiple Relationships</strong></li>
+                 <ul>
+  <li>fifth normal form exists, but are rarely considered in practical design</li>
+                 </ul>
 </ol>
     </ul>
                   <h3>What is Referential Integrity(RI)</h3>
@@ -44,7 +68,7 @@
   <li><strong>Foreign key constraint</strong>:a column or combination of columns used to establish a link between data in two tables</li>
   <li><strong>Unique constraint</strong>:allows you to enforce uniqueness in columns other than the primary key</li>
   <li><strong>Indexes</strong>:ensures the index key contains no duplicate values and that every row in the table or view is unique in someway</li>
-  <li><strong>Triggers</strong>:complex T-SQL statements used to provide data integrity when table data modified</li>
+  <li><strong>Triggers</strong>:complex TSQL statements used to provide data integrity when table data modified</li>
   </ol>
 <li>Any of these methods can be created as a composite key which is an index or constraint created using more than one column.</li>
 <li>It may be necessary to use more than one column to create a unique value for each row in a table.</li>
