@@ -13,66 +13,44 @@
 </body>
 
 <section>
-  <h2>2.Relational concepts (15 to 20)%</h2>
-                 <h3>What is Normalization</h3>
-    <ul>
-<li>It is the process of organizing data in a database.</li>
-<li>It includes creating tables and establishing relationships between the tables</li>
-<li>Process is used to help eliminate redundant data</li>
-<li>Five normalization forms (NFs) </li>
-<ol>
-<li><strong>1NF: Eliminate Repeating <u><em>GROUPS</em></u></strong></li>
-                 <ul>
-  <li>Eliminate repeating groups in individual tables</li>
-  <li>Create separate table for each set of related data</li>
-  <li>Identify each set of related data with primary key</li>
-  <li>Do not use multiple fields in a single table to store similar data</li>
-              </ul>
-<li><strong>2NF: Eliminate Redundant <u><em>DATA</em></u></strong></li>
-                        <ul>
-<li>ensures each attribute describes the entity</li>
-<li>Create separate tables for sets of values that 	apply to multiple records</li>
-<li>Relate these tables with a foreign key</li>
-<li>Records should not depend on anything other than a tables primary key, including a compound key if necessary.</li>
-                        </ul>
-<li><strong>3NF: Eliminate <u><em>COLUMNS</em></u> Not Dependent on Key</strong></li>
-                <ul>
-<li>checks for transitive dependencies.</li>
-<li>Eliminate fields that do not depend on the key</li>
-<li>Values that are not part of the records key do not belong in the table</li>
-<li>In general if the contents of a group of fields apply to more than a single record, put those fields in a separate table</li>
-             </ul>
-<li><strong>4NF: Isolate Independent Multiple Relationships</strong></li>
-                <ul>
-  <li>The fourth normal form is also called the Boyce Codd Normal Form (BCNF)</li>
-                </ul>
-<li><strong>5NF: Isolate Semantically Related Multiple Relationships</strong></li>
-                 <ul>
-  <li>fifth normal form exists, but are rarely considered in practical design</li>
-                 </ul>
-</ol>
-    </ul>
-                  <h3>What is Referential Integrity(RI)</h3>
-    <ul>
-<li>(RI) is a database concept used to ensure that the relationships between your database tables remains synchronized during data modifications.</li>
-<li>RI can be used to ensure the data is clean, may be helpful in optimizing your database environment and can assist in early detection of errors.</li>
-<li>A combination of PRIMARY KEY and FOREIGN KEY constraints can be used to help enforce referential integrity of your database.</li>
-<li>In addition to a foreign key referencing a primary key constraint, a foreign key can also reference a UNIQUE constraint to help maintain referential integrity.</li>
-<li>Triggers can also be used to enforce referential integrity, however being triggers require code they don’t execute as quickly as table properties such as a primary key constraint.</li>
-</ul>
-                   <h3>Methods for enforcing referential integrity</h3>
-<ul>
-  <li>There are several methods available in SQL Server to help maintain database integrity:</li>
-  <ol>
-  <li><strong>Primary key constraint</strong>:an attribute or set of attributes used to uniquely identify each row </li>
-  <li><strong>Foreign key constraint</strong>:a column or combination of columns used to establish a link between data in two tables</li>
-  <li><strong>Unique constraint</strong>:allows you to enforce uniqueness in columns other than the primary key</li>
-  <li><strong>Indexes</strong>:ensures the index key contains no duplicate values and that every row in the table or view is unique in someway</li>
-  <li><strong>Triggers</strong>:complex TSQL statements used to provide data integrity when table data modified</li>
-  </ol>
-<li>Any of these methods can be created as a composite key which is an index or constraint created using more than one column.</li>
-<li>It may be necessary to use more than one column to create a unique value for each row in a table.</li>
-</ul>
+  <h2>3.Create database and DataBase objects (20 to 25)%</h2>
+                 <h3>What is data type</h3>
+<li>A data type is an attribute that specifies the type of data that an object can hold as well as the number of bytes of information that can be stored in the object.</li>
+<li>If you have similar data types to choose from but they only differ in byte size, use the data type that has a larger range of values and/or has increased precision</li>
+<li>Exact numeric data types (int, tinyint) are the most common SQL Server data types used to store numeric information.</li>
+<li>Approximate Numerics include precision (p) which is the total number of decimal digits that could be stored, both to the left and right of the decimal point. </li>
+<li>Unicode data types provide storage of international characters, such as Japanese and Chinese, to allow worldwide businesses to use big vendor database products to store their data.
+<li>Unicode data types takes more bytes to store the data in the database</li>
+SQL Server 2012s built in data types are organized into the following categories:
+                <h3>Built in data type Categories</h3>
+<li>Exact numerics (bigint, bit, decimal, int, money, numeric, smallint)</li>
+<li>Approximate numerics (float, real)</li>
+<li>Date and time (date, datetime2, datetime, datetimeoffset, time)</li>
+<li>Character strings (char, varchar, text)</li>
+<li>Unicode character strings (nchar, ntext, nvarchar)</li>
+<li>Binary strings (binary, varbinary, image)</li>
+<li>Other data types (cursor, timestamp, uniqueidentifier, table)</li>
+<li>Large valued data types (varchar(max), nvarchar(max))</li>
+<li>Large object data types (text, ntext, image, xml)</li>
+               <h3>Data Types</h3>
+
+<li><strong>Money</strong>- used where you will store money or currency values</li>
+<li><strong>Int</strong>- used to store whole numbers and when performing mathematical computations</li>
+<li><strong>Float</strong>- commonly used in the scientific community and is considered an approximate-number data type </li>
+<li><strong>Datetime</strong>-used to store date and time values in one of many different formats</li>
+<li><strong>Char</strong>-fixed length non-unicode string data type where n defines the string length
+<li><strong>Varchar</strong>-variable length non-unicode string data type that indicates the actual storage size of the data
+<li><strong>Bit (Boolean)</strong>- integer that can have a null, 0 (False), or 1 (True) value
+<li><strong>Datetimeoffset</strong>- a date combined with time of day that has time zone awareness
+            <h3>Implicit and explicit conversions</h3>
+<li><strong>Implicit data type conversions</strong> occurs when the SQL Server expression evaluator automatically converts data from one data type to another to complete an operation like a comparison of two values</li>
+<li><strong>Explicit data type conversions</strong> require the use of the CONVERT or CAST function to convert data from one data type to another before an operation like a comparison can be completed.
+To convert a numeric value into a character string</li>
+		<li>CAST ( $157.27 AS VARCHAR(10) )</li>
+<li>Not all data types conversions are supported</li>
+<li>nchar cannot be converted to image</li>
+<li>Use CAST instead of CONVERT to adhere to ISO</li>
+<li>Use CONVERT instead of CAST to take advantage of the style functionality</li>
 
 </section>
 
