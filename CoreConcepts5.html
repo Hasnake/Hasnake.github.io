@@ -13,45 +13,88 @@
 </body>
 
 <section>
-  <h2>3.Create database and DataBase objects (20 to 25)%</h2>
-                 <h3>What is data type</h3>
-<li>A data type is an attribute that specifies the type of data that an object can hold as well as the number of bytes of information that can be stored in the object.</li>
-<li>If you have similar data types to choose from but they only differ in byte size, use the data type that has a larger range of values and/or has increased precision</li>
-<li>Exact numeric data types (int, tinyint) are the most common SQL Server data types used to store numeric information.</li>
-<li>Approximate Numerics include precision (p) which is the total number of decimal digits that could be stored, both to the left and right of the decimal point. </li>
-<li>Unicode data types provide storage of international characters, such as Japanese and Chinese, to allow worldwide businesses to use big vendor database products to store their data.
-<li>Unicode data types takes more bytes to store the data in the database</li>
-SQL Server 2012s built in data types are organized into the following categories:
-                <h3>Built in data type Categories</h3>
-<li>Exact numerics (bigint, bit, decimal, int, money, numeric, smallint)</li>
-<li>Approximate numerics (float, real)</li>
-<li>Date and time (date, datetime2, datetime, datetimeoffset, time)</li>
-<li>Character strings (char, varchar, text)</li>
-<li>Unicode character strings (nchar, ntext, nvarchar)</li>
-<li>Binary strings (binary, varbinary, image)</li>
-<li>Other data types (cursor, timestamp, uniqueidentifier, table)</li>
-<li>Large valued data types (varchar(max), nvarchar(max))</li>
-<li>Large object data types (text, ntext, image, xml)</li>
-               <h3>Data Types</h3>
+  <h2>5.SQL Server Administration Fundamentals(20 to 25)%</h2>
+  <h3><u>SECURITY</u></h3>
+           <h4>Database security</h4>
+<li>Securing your database content is a critical part of a DBAs job.</li>
+<li> The design, testing, and implementation of security is necessary to ensure that confidentiality is not compromised</li>
+<li><strong>Securables</strong> are the server, database, and objects a database contains</li>
+<li><strong>Principals</strong> are the individuals, groups, and processes granted access to SQL Server</li>
+<li><strong>Permissions</strong> are granted to a principal for every SQL Server securable</li>
 
-<li><strong>Money</strong>- used where you will store money or currency values</li>
-<li><strong>Int</strong>- used to store whole numbers and when performing mathematical computations</li>
-<li><strong>Float</strong>- commonly used in the scientific community and is considered an approximate-number data type </li>
-<li><strong>Datetime</strong>-used to store date and time values in one of many different formats</li>
-<li><strong>Char</strong>-fixed length non-unicode string data type where n defines the string length
-<li><strong>Varchar</strong>-variable length non-unicode string data type that indicates the actual storage size of the data
-<li><strong>Bit (Boolean)</strong>- integer that can have a null, 0 (False), or 1 (True) value
-<li><strong>Datetimeoffset</strong>- a date combined with time of day that has time zone awareness
-            <h3>Implicit and explicit conversions</h3>
-<li><strong>Implicit data type conversions</strong> occurs when the SQL Server expression evaluator automatically converts data from one data type to another to complete an operation like a comparison of two values</li>
-<li><strong>Explicit data type conversions</strong> require the use of the CONVERT or CAST function to convert data from one data type to another before an operation like a comparison can be completed.
-To convert a numeric value into a character string</li>
-		<li>CAST ( $157.27 AS VARCHAR(10) )</li>
-<li>Not all data types conversions are supported</li>
-<li>nchar cannot be converted to image</li>
-<li>Use CAST instead of CONVERT to adhere to ISO</li>
-<li>Use CONVERT instead of CAST to take advantage of the style functionality</li>
+                <h4>Logins and accounts</h4>
+<li>Three tiered approach to accessing content.
+   <ol>
+<li>SQL Server access:a <strong>login</strong> is a security principal that can be authenticated by a secure system to provide a user access to SQL Server</li>
+<li>Database access: a <strong>database user</strong>is mapped to a SQL login and provides a user or group access to a database</li>
+<li>Object access: <strong>permissions</strong> are applied at the object level to provide the appropriate access to the objects within the database</li>
+   </ol>
+               <h4>Server-level security</h4>
+<li>Authentication is the act of verifying a user or system identity and allowing them to login using:</li>
+        <ul>
+<li>Windows Authentication </li>
+<li>Windows user account </li>
+<li>Windows security group</li>
+<li>Mixed-Mode (Windows and SQL logins)</li>
+<li>SQL Server:specific login </li>
+<li>sa account (built-in SQL administrator)</li>
+        </ul>
+<li>Logins can be populated into the fixed server roles or in user-defined server roles</li>
+                   <h4>Fixed server roles</h4>
+<li>SQL Server includes several fixed server roles:</li>
+                     <ul>
+<li>Sysadmin:perform any activity on the server</li>
+<li>Dbcreator:create, alter, drop, restore databases</li>
+<li>Securityadmin:manage logins and their properties</li>
+<li>You can also create user defined server roles  that have specific permissions applied to the roles</li>
+                    </ul>
+ <h3><u>SECURING SQL SERVER DATABASES and OBJECTS</u></h3>
+ <h4>Database-level security</h4>
+<li>A database user is a database level security principal that must be mapped to a login at the server level in order for the user to connect to the database</li>
+<li>A login can be mapped to different databases as different users but can only be mapped as one user in each database</li>
+<li>Database users can be populated into the fixed database roles or in a user-defined database role </li>
+<li>All users are automatically members of the public database role and cannot be removed</li>
+                  <h4>Fixed database roles</h4>
+<li>SQL Server includes several fixed database roles</li>
+<ul>
+  <li>db_owner – perform all configuration activities</li>
+  <li>db_datareader – read all data from all user tables</li>
+  <li>db_datawriter – add, delete, or change data</li>
+</ul>
+<li>You can also create user-defined database roles that have specific permissions applied to the roles</li>
+<h3><u>CREATING and ASSIGNING PERMISSIONS TO A LOGIN</u></h3>
+<h4>Guest logon accounts</h4>
+<li>The guest user account is included in every database and is used by any user who accesses the  database but does not have a user account within the database
+The guest user account cannot be dropped but it can be disabled by revoking it’s connect permission
+	REVOKE connect FROM guest</li>
+  <h4>Managing object permissions</h4>
+  <li>Permissions to an object can be managed by using the following commands
+Grant - provides a level of access to the object Deny - overrides any grant permission
+Revoke - removes the previously assigned permission, regardless of whether it was a deny or grant permission</li>
+<h4>Object permissions</h4>
+<li>Object permissions are the permissions that allow a user to perform actions on database objects (such as tables, stored procedures, and views):
+SELECT
+INSERT
+UPDATE
+DELETE
+DRI (Data Referential Integrity)
+EXECUTE (stored procedures)
+</li>
+<h3><u>DATABASE BACKUPS</u></h3>
+<h4>Databases backups</h4>
+<li>A database backup is performed so you can restore data if it is corrupted or lost
+A user may accidentally delete a table requiring the DBA to restore the table to the point it was when the last backup was performed
+Database backups can also be used to restore content on another SQL Server so you generate reports from that server </li>
+<h4>Common types of backups</h4>
+<li>Full backup - contains all the data in a specific database, or set of filegroups or files, and also the portion of the transaction log necessary to recover all the data
+Differential backup - contains all the data that has changed since the differential base
+Incremental backup (transaction log) - contains only the data that has changed since the last full or incremental backup
+Other backup types</li>
+<h4>Data base restore</h4>
+<li>Restore scenarios include the following:
+Complete database restore – restore full database backup
+Differential restore – restore all changes contained in the differential backup
+Transaction log restore – restores a transaction log backup</li>
 
 </section>
-
 </html>
