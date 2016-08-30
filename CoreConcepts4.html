@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MTA</title>
+<link rel="stylesheet" href="index.css" type="text/css">
+<link rel="icon" type="image/jpg" href="icon.JPG">
+</head>
+<body>
+<h1>The 5 MTA Exam Components</h1>
+<nav>
+<a href="index.html">Home</a>
+</nav>
+</body>
+
+<section>
+  <h2>3.Create database and DataBase objects (20 to 25)%</h2>
+                 <h3>What is data type</h3>
+<li>A data type is an attribute that specifies the type of data that an object can hold as well as the number of bytes of information that can be stored in the object.</li>
+<li>If you have similar data types to choose from but they only differ in byte size, use the data type that has a larger range of values and/or has increased precision</li>
+<li>Exact numeric data types (int, tinyint) are the most common SQL Server data types used to store numeric information.</li>
+<li>Approximate Numerics include precision (p) which is the total number of decimal digits that could be stored, both to the left and right of the decimal point. </li>
+<li>Unicode data types provide storage of international characters, such as Japanese and Chinese, to allow worldwide businesses to use big vendor database products to store their data.
+<li>Unicode data types takes more bytes to store the data in the database</li>
+SQL Server 2012s built in data types are organized into the following categories:
+                <h3>Built in data type Categories</h3>
+<li>Exact numerics (bigint, bit, decimal, int, money, numeric, smallint)</li>
+<li>Approximate numerics (float, real)</li>
+<li>Date and time (date, datetime2, datetime, datetimeoffset, time)</li>
+<li>Character strings (char, varchar, text)</li>
+<li>Unicode character strings (nchar, ntext, nvarchar)</li>
+<li>Binary strings (binary, varbinary, image)</li>
+<li>Other data types (cursor, timestamp, uniqueidentifier, table)</li>
+<li>Large valued data types (varchar(max), nvarchar(max))</li>
+<li>Large object data types (text, ntext, image, xml)</li>
+               <h3>Data Types</h3>
+
+<li><strong>Money</strong>- used where you will store money or currency values</li>
+<li><strong>Int</strong>- used to store whole numbers and when performing mathematical computations</li>
+<li><strong>Float</strong>- commonly used in the scientific community and is considered an approximate-number data type </li>
+<li><strong>Datetime</strong>-used to store date and time values in one of many different formats</li>
+<li><strong>Char</strong>-fixed length non-unicode string data type where n defines the string length
+<li><strong>Varchar</strong>-variable length non-unicode string data type that indicates the actual storage size of the data
+<li><strong>Bit (Boolean)</strong>- integer that can have a null, 0 (False), or 1 (True) value
+<li><strong>Datetimeoffset</strong>- a date combined with time of day that has time zone awareness
+            <h3>Implicit and explicit conversions</h3>
+<li><strong>Implicit data type conversions</strong> occurs when the SQL Server expression evaluator automatically converts data from one data type to another to complete an operation like a comparison of two values</li>
+<li><strong>Explicit data type conversions</strong> require the use of the CONVERT or CAST function to convert data from one data type to another before an operation like a comparison can be completed.
+To convert a numeric value into a character string</li>
+		<li>CAST ( $157.27 AS VARCHAR(10) )</li>
+<li>Not all data types conversions are supported</li>
+<li>nchar cannot be converted to image</li>
+<li>Use CAST instead of CONVERT to adhere to ISO</li>
+<li>Use CONVERT instead of CAST to take advantage of the style functionality</li>
+
+</section>
+
+</html>
