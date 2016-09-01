@@ -14,44 +14,49 @@
 
 <section>
   <h2>4.DML Data Manipulation Language(20 to 25)%</h2>
-                 <h3>What is data type</h3>
-<li>A data type is an attribute that specifies the type of data that an object can hold as well as the number of bytes of information that can be stored in the object.</li>
-<li>If you have similar data types to choose from but they only differ in byte size, use the data type that has a larger range of values and/or has increased precision</li>
-<li>Exact numeric data types (int, tinyint) are the most common SQL Server data types used to store numeric information.</li>
-<li>Approximate Numerics include precision (p) which is the total number of decimal digits that could be stored, both to the left and right of the decimal point. </li>
-<li>Unicode data types provide storage of international characters, such as Japanese and Chinese, to allow worldwide businesses to use big vendor database products to store their data.
-<li>Unicode data types takes more bytes to store the data in the database</li>
-SQL Server 2012s built in data types are organized into the following categories:
-                <h3>Built in data type Categories</h3>
-<li>Exact numerics (bigint, bit, decimal, int, money, numeric, smallint)</li>
-<li>Approximate numerics (float, real)</li>
-<li>Date and time (date, datetime2, datetime, datetimeoffset, time)</li>
-<li>Character strings (char, varchar, text)</li>
-<li>Unicode character strings (nchar, ntext, nvarchar)</li>
-<li>Binary strings (binary, varbinary, image)</li>
-<li>Other data types (cursor, timestamp, uniqueidentifier, table)</li>
-<li>Large valued data types (varchar(max), nvarchar(max))</li>
-<li>Large object data types (text, ntext, image, xml)</li>
-               <h3>Data Types</h3>
+                 <h3>Common DML statements</h3>
+                 <ul>
+<li>SELECT:retrieve data</li>
+<li>INSERT: add data </li>
+<li>UPDATE:modify data</li>
+<li>DELETE:remove data</li>
+<li>BULK INSERT:Import a data file</li>
+                 </ul>
+                <h3>Using the basic SELECT statement</h3>
+<li>The SELECT statement is used to retrieve rows and columns from a table.</li>
+<li>SELECT * FROM table_name</li>
+<li>The SELECT statement requires the name of the table and either the * (retrieves all columns) or specific column names</li>
+<li>To limit the number of rows returned you can include the WHERE clause in the SELECT statement</li>
+<li><strong><u>EXAMPLE NOT,BETWEEN,UNION CLAUSES</u></strong></li>
+                 <ul>
+<li><strong>USE</strong> AdventureWorks2012</li>
+<li><strong>select</strong> BusinessEntityID,JobTitle,VacationHours,Gender</li>
+<li><strong>From</strong>HumanResources.Employee
+<li><strong>where</strong> VacationHours <strong>between</strong> 75 and 100 AND <strong>Not</strong> Gender="M"</li>
+<li><strong>Union</strong></li>
+<li><strong>select</strong> BusinessEntityID,JobTitle,VacationHours,Gender</li>
+<li><strong>From</strong> HumanResources.Employee</li>
+<li><strong>where</strong> VacationHours <strong>between</strong> 50 and 75 AND <strong>Not</strong> Gender="F"</li>
+<li><strong>order by</strong> VacationHours <strong>DESC</strong>;</li>
+                  </ul>
+<li><strong><u>EXCEPT and INTERSECT clauses</u></strong></li>
+         <ul>
+<li>The <strong>EXCEPT</strong> clause returns distinct values from the left query that are not found on the right query.</li>
+<li>The <strong>INTERSECT</strong> clause returns any distinct values returned by both the query on the left and right sides of intersect operand</li>
+<li>SELECT ProductID</li>
+<li>FROM Production.Product </li>
+<li>EXCEPT</li> or <li>INTERSECT </li>
+<li>SELECT ProductID </li>
+<li>FROM Production.WorkOrder ; </li>
 
-<li><strong>Money</strong>- used where you will store money or currency values</li>
-<li><strong>Int</strong>- used to store whole numbers and when performing mathematical computations</li>
-<li><strong>Float</strong>- commonly used in the scientific community and is considered an approximate-number data type </li>
-<li><strong>Datetime</strong>-used to store date and time values in one of many different formats</li>
-<li><strong>Char</strong>-fixed length non-unicode string data type where n defines the string length
-<li><strong>Varchar</strong>-variable length non-unicode string data type that indicates the actual storage size of the data
-<li><strong>Bit (Boolean)</strong>- integer that can have a null, 0 (False), or 1 (True) value
-<li><strong>Datetimeoffset</strong>- a date combined with time of day that has time zone awareness
-            <h3>Implicit and explicit conversions</h3>
-<li><strong>Implicit data type conversions</strong> occurs when the SQL Server expression evaluator automatically converts data from one data type to another to complete an operation like a comparison of two values</li>
-<li><strong>Explicit data type conversions</strong> require the use of the CONVERT or CAST function to convert data from one data type to another before an operation like a comparison can be completed.
-To convert a numeric value into a character string</li>
-		<li>CAST ( $157.27 AS VARCHAR(10) )</li>
-<li>Not all data types conversions are supported</li>
-<li>nchar cannot be converted to image</li>
-<li>Use CAST instead of CONVERT to adhere to ISO</li>
-<li>Use CONVERT instead of CAST to take advantage of the style functionality</li>
-
+          </ul>
+          <h3>JOINS</h3>
+<li>The JOIN clause allows you to combine related data from multiple tables into one result set</li>
+<ul>
+<li><strong>INNER JOINS</strong> uses a comparison operator to match rows from two tables based on values in a common column that exists in both tables</li>
+<li><strong>OUTER JOINS</strong> (left, right, or full) includes rows from one or both tables even if they dont have matching values</li>
+<li><strong>CROSS JOINS</strong>return all rows from the left table with all rows from the right table.WHERE conditions should always be included.</li>
+</ul>
 </section>
 
 </html>
