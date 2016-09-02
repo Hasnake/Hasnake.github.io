@@ -9,52 +9,88 @@
 <nav>
 <a href="index.html">Home</a>
 </nav>
-<h1>Questions on Relational DB concepts 15% </h1>
+<h1>Questions on DML concepts 25% </h1>
 </body>
 <section>
   <ol>
-<li>You are creating a database by using SQL Server Management Studio. What information must you supply? (Choose 2.)</li>
-               <ul>
-<li>Location for log file
-<li>Database name</li>
-<li>Location for data file</li>
-<li>Initial size of database files</li>
-              </ul>
-<li>User-defined functions require one or more input parameters.</li>
-               <ul>
-      <li>True</li> <li><strong>False</strong></li>
-              </ul>
-
-<li>Which of the following statements about Views are correct? (Choose 2.)</li>
-                    <ul>
-<li>A View is stored in a database as a query object.</li>
-<li>A View is a group of SQL statements that have been compiled and saved.</li>
-<li>	A View does not allow you to update data.</li>
-<li>Views can retrieve data from a single table only.</li>
-
-                   </ul>
-<li>Which of the following statements regarding stored procedures is true?</li>
+           <li>Which of the following are valid types of indexes in SQL Server? (Choose all that apply.)</li>
                  <ul>
-<li><strong>Stored procedures cannot be used to modify the configuration of SQL Server.</strong></li>
-<li>You can use the GETDATE() function within a stored procedure.</li>
-<li><strong>You must call stored procedures from within another SQL statement.</strong></li>
-<li><strong>SQL code execution always stops if an error occurs within a stored procedure.</strong></li>
+<li><strong>clustered</strong></li>
+<li>variable</li>
+<li><strong>unique</strong></li>
+<li><strong>non-clustered</strong></li>
+              </ul>
+          <li>How many clustered indexes can you create for a table?</li>
+               <ul>
+<li>Unlimited</li>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+              </ul>
+        <li>Which of the following statements about SQL Server indexes is true?</li>
+                    <ul>
+<li>You can only create indexes for fields that use character data types.</li>
+<li><strong>Indexes speed up the retrieval of data from a table.</strong></li>
+<li>Indexes speed up the insertion of new data into a table.</li>
+<li>You can create only one index for each table.</li>
+                  </ul>
+<li>You have two related tables named employees and tasks.</li>
+<li>You need to return a list of employees that have tasks assigned and include the tasks assigned to each employee.</li>
+<li>What type of join should you create between the tables?</li>
+                        <ul>
+<li>LEFT OUTER</li>
+<li>INNER</li>
+<li>CROSS</li>
+<li>RIGHT OUTER</li>
                          </ul>
+<li>An INNER JOIN returns all combinations of rows from two tables.</li>
+                                        <ul>
+            <li>True</li> <li><strong>False</strong></li>
+                                       </ul>
+<li>You need to combine records from multiple SELECT statements.</li>
+<li>You only want to return distinct values from both queries.</li>
+<li>Which operator should you use to combine the records?</li>
+        <ul>
+<li>UNION ALL</li>
+<li>UNION</li>
+<li>INTERSECT</li>
+<li>EXCEPT</li>
+</ul>
 
-<li>Which of the following are valid SQL 2012 exact numeric data types? (Choose 3.)</li>
-                           <ul>
-  <li>Int</li>
-	<li>Bit</li>
-	<li>Real</li>
-	<li>Float</li>
-	<li>Money</li>
-                        </ul>
-<li>Unicode data types require more storage space than non-Unicode data types.</li>
-                       <ul>
-<li>False</li> <li><strong>True</strong></li>
-                      </ul>
+<li>You need to create a query that returns all rows from one table and only matching rows from a second table.</li>
+<li>What type of join should you use?</li>
+            <ul>
+<li><strong>OUTER</strong></li>
+<li>INNER</li>
+<li>FULL</li>
+<li>CROSS</li>
+        </ul>
+<li>You need to add new rows to a table. Which SQL statement should you use?</li>
+<ul>
+<li><strong>INSERT</strong></li>
+<li>ADD</li>
+<li>ATTACH</li>
+<li>APPEND</li>
+</ul>
+<li>Which actions can invoke triggers? (Choose all that apply.)</li>
+      <ul>
+<li><strong>Deleting</strong> data from a table</li>
+<li><strong>Updating</strong> data in a table</li>
+<li>Selecting data from a table</li>
+<li><strong>Inserting</strong> data into a table</li>
+   </ul>
+<li>An INNER JOIN returns all combinations of rows from two tables.</li>
+        <ul>
+<li>True</li> <li><strong>False</strong></li>
+          </ul>
+<li>You need to create a query that returns only matching rows from two tables based on values in a column that exists in both tables.</li>
+<li>What type of join should you use?</li>
+         <ul>
+<li>CROSS</li>
+<li><strong>INNER</strong></li>
+<li>OUTER</li>
+<li>FULL</li>
+      </ul>
 
-  </ol>
-  </section>
-
+</section>
 </html>
