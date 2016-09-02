@@ -67,6 +67,50 @@
 <li><strong>MAX</strong>(LineTotal) <strong>AS</strong> Max_LineTotal</li>
 <li>FROM Sales.SalesOrderDetail;</li>
 </ul>
+          <h3>INSERT INTO</h3>
+<li>You can add a new row to a table using the INSERT statement</li>
+<li><strong>INSERT INTO</strong> Production.UnitMeasure</li>
+<li><strong>VALUES</strong> (N'FT', N'Feet', '20080414')</li>
+<li>You can add multiple rows to a table using the following INSERT statement</li>
+<li><strong>INSERT INTO </strong>Production.UnitMeasure </li>
+<li><strong>VALUES</strong> (N'FT2', N'Square Feet ', '20080923'), </li>
+<li>(N'Y', N'Yards', '20080923'), </li>
+<li>(N'Y3', N'Cubic Yards', '20080923')</li>
+<li>('AB', 'Haile', '20160901')</li>
+<li><strong>BULK INSERT</strong> can be used to import a data file into a table with a user-specified format.</li>
+
+            <h3>UPDATE STATEMENT</h3>
+<li>The UPDATE statement is used to modify the data that is already stored in a table</li>
+<li><strong>UPDATE</strong> Sales.SalesPerson</li>
+<li><strong>SET</strong> Bonus = 6000, CommissionPct = .10, SalesQuota = NULL </li>
+<li><strong>WHERE</strong> sales.SalesPerson.BusinessEntityID = 289</li>
+         <h3>DELETE</h3>
+<li>The DELETE statement is used to delete rows from a table</li>
+<li><strong>DELETE</strong> </li>
+<li><strong>FROM</strong> Production.UnitMeasure</li>
+<li><strong>WHERE</strong> Production.UnitMeasure.Name =Feet</li>
+<li>A DELETE statement without a WHERE clause will cause all rows to be deleted</li>
+         <h3>SQL SERVER INDEXES</h3>
+<li>Indexes allow you to speed up the retrieval of data stored within a table or view</li>
+<li>The SQL Server query optimizer evaluates each method for retrieving the data and selects the most efficient method which may be a table scan or using one or more indexes if they exist.
+<li>The most commonly used indexes include</li>
+<ul>
+  <li>clustered</li>
+  <li>nonclustered</li>
+  <li>unique</li>
+</ul>
+<h3>CREATING A DML TRIGGER</h3>
+<li>Triggers are used to enforce business rules when data is modified</li>
+This DML trigger displays a message to the user when they try to add or change data in the customer table</li>
+<li>CREATE TRIGGER Reminder1 </li>
+<li>ON Sales.Customer </li>
+<li>AFTER INSERT, UPDATE </li>
+<li>AS RAISERROR ('Notify Customer Relations', 16, 10); </li>
+<li>GO</li> 
+
+
+
+
 
 </section>
 
