@@ -57,13 +57,14 @@
 <li><strong>OUTER JOINS</strong> (left, right, or full) includes rows from one or both tables even if they dont have matching values</li>
 <li><strong>CROSS JOINS</strong>return all rows from the left table with all rows from the right table.WHERE conditions should always be included.</li>
 </ul>
-<h3>AGGRIGATES</h3>
+<h3>AGGRIGATES:functions</h3>
 <li>SQL Server provides aggregate functions to assist with the summarization of large volumes of data</li>
 <ul>
-<li>SELECT COUNT (DISTINCT SalesOrderID) AS UniqueOrders,</li>
-<li>AVG(UnitPrice) AS Avg_UnitPrice,</li>
-<li>MIN(OrderQty)AS Min_OrderQty,</li>
-<li>MAX(LineTotal) AS Max_LineTotal</li>
+<li>SELECT</li>
+<li><strong>COUNT</strong> (DISTINCT SalesOrderID)<strong>AS</strong> UniqueOrders,</li>
+<li><strong>AVG</strong>(UnitPrice) <strong>AS</strong> Avg_UnitPrice,</li>
+<li><strong>MIN</strong>(OrderQty)<strong>AS</strong> Min_OrderQty,</li>
+<li><strong>MAX</strong>(LineTotal) <strong>AS</strong> Max_LineTotal</li>
 <li>FROM Sales.SalesOrderDetail;</li>
 </ul>
 
