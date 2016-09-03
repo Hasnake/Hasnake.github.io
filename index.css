@@ -6,8 +6,8 @@
       }
     body
     {
-       width: 800px;
-       height: 800%;
+       width:600px;
+       height:1600%;
        padding:20px;
        border: 4px solid #000000;
   animation: pulse 10s infinite;
